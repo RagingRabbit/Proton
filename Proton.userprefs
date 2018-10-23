@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{F0A94D0C-33DA-435C-8BA9-5C2DC053C889}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Proton\Src\Core\Bindings\CSGL.cs">
+    <Files>
+      <File FileName="Proton\Program.cs" Line="23" Column="73" />
+      <File FileName="Proton\Src\ProtonEngine.cs" Line="4" Column="25" />
+      <File FileName="Proton\Src\Core\Bindings\CSGL.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Proton PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

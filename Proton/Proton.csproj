@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{F0A94D0C-33DA-435C-8BA9-5C2DC053C889}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Proton</RootNamespace>
+    <AssemblyName>Proton</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Src\ProtonEngine.cs" />
+    <Compile Include="Src\Core\Bindings\Dll.cs" />
+    <Compile Include="Src\Core\Bindings\Glfw.cs" />
+    <Compile Include="Src\Core\Bindings\OpenGL\GL11.cs" />
+    <Compile Include="Src\Core\Bindings\OpenGL\GL12.cs" />
+    <Compile Include="Src\Core\Bindings\OpenGL\GL13.cs" />
+    <Compile Include="Src\Core\Bindings\OpenGL\GL14.cs" />
+    <Compile Include="Src\Core\Bindings\OpenGL\GL15.cs" />
+    <Compile Include="Src\Core\Bindings\OpenGL\GL20.cs" />
+    <Compile Include="Src\Core\Bindings\OpenGL\GL21.cs" />
+    <Compile Include="Src\Core\Bindings\OpenGL\GL30.cs" />
+    <Compile Include="Src\Core\Bindings\OpenGL\GL31.cs" />
+    <Compile Include="Src\Core\Bindings\OpenGL\GL32.cs" />
+    <Compile Include="Src\Core\Bindings\OpenGL\GL33.cs" />
+    <Compile Include="Src\Core\Bindings\OpenGL\GL40.cs" />
+    <Compile Include="Src\Core\Bindings\OpenGL\GL41.cs" />
+    <Compile Include="Src\Core\Bindings\OpenGL\GL42.cs" />
+    <Compile Include="Src\Core\Bindings\OpenGL\GL43.cs" />
+    <Compile Include="Src\Core\Bindings\OpenGL\GL44.cs" />
+    <Compile Include="Src\Core\Bindings\OpenGL\GL45.cs" />
+    <Compile Include="Src\Core\Bindings\Native.cs" />
+    <Compile Include="Src\Core\Bindings\CSGL.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

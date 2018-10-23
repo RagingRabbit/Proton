@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proton", "Proton\Proton.csproj", "{F0A94D0C-33DA-435C-8BA9-5C2DC053C889}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0A94D0C-33DA-435C-8BA9-5C2DC053C889}.Debug|x86.ActiveCfg = Debug|x86
+		{F0A94D0C-33DA-435C-8BA9-5C2DC053C889}.Debug|x86.Build.0 = Debug|x86
+		{F0A94D0C-33DA-435C-8BA9-5C2DC053C889}.Release|x86.ActiveCfg = Release|x86
+		{F0A94D0C-33DA-435C-8BA9-5C2DC053C889}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal
