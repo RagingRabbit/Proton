@@ -1,25 +1,23 @@
-﻿using System;
-using Proton;
+﻿using Proton;
+using System;
 
 class MainClass : EngineAdapter
 {
-	public void Start()
-	{
-		Console.WriteLine("Engine has started");
-	}
+    public void Start()
+    {
+        Graphics.backgroundColor = new Color(0, 120, 215);
+    }
 
-	public void Stop()
-	{
-		Console.WriteLine("Engine has stopped");
-	}
+    public void Stop()
+    {
+    }
 
-	public void Update()
-	{
-		Console.WriteLine("Updating");
-	}
+    public void Update()
+    {
+    }
 
-	public static void Main(string[] args)
-	{
-		ProtonEngine.Launch(new MainClass(), new LaunchParams(1280, 720, ""));
-		Console.ReadKey();	}
+    public static void Main(string[] args)
+    {
+        ProtonEngine.Launch(new MainClass(), new LaunchParams(1280, 720, ""));
+        Console.ReadKey();    }
 }
