@@ -6,9 +6,8 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workbench ActiveDocument="Proton\Src\ProtonEngine.cs">
     <Files>
-      <File FileName="Proton\Program.cs" Line="23" Column="73" />
-      <File FileName="Proton\Src\ProtonEngine.cs" Line="14" Column="4" />
-      <File FileName="Proton\Src\Core\Bindings\CSGL.cs" Line="565" Column="28" />
+      <File FileName="Proton\Program.cs" Line="23" Column="19" />
+      <File FileName="Proton\Src\ProtonEngine.cs" Line="42" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />

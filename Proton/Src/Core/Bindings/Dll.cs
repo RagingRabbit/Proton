@@ -14,7 +14,7 @@ namespace Proton
 	{
 		#region DllImport
 		[DllImport("kernel32.dll")]
-		private static extern IntPtr LoadLibrary(string filename);
+		internal static extern IntPtr LoadLibrary(string filename);
 
 		[DllImport("kernel32.dll")]
 		private static extern IntPtr GetProcAddress(IntPtr hModule, string procname);
