@@ -4,11 +4,11 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Proton\Src\Core\Bindings\CSGL.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Proton\Src\ProtonEngine.cs">
     <Files>
       <File FileName="Proton\Program.cs" Line="23" Column="73" />
-      <File FileName="Proton\Src\ProtonEngine.cs" Line="4" Column="25" />
-      <File FileName="Proton\Src\Core\Bindings\CSGL.cs" Line="1" Column="1" />
+      <File FileName="Proton\Src\ProtonEngine.cs" Line="14" Column="4" />
+      <File FileName="Proton\Src\Core\Bindings\CSGL.cs" Line="565" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
