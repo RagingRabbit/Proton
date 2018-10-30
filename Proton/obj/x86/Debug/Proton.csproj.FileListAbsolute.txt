@@ -1,8 +1,7 @@
+D:\projects\cs\Proton\Proton\obj\x86\Debug\Proton.csprojResolveAssemblyReference.cache
+D:\projects\cs\Proton\Proton\obj\x86\Debug\Proton.exe
+D:\projects\cs\Proton\Proton\obj\x86\Debug\Proton.pdb
 D:\PROJECTS\C#\Proton\Proton\bin\Debug\Proton.exe
 D:\PROJECTS\C#\Proton\Proton\bin\Debug\Proton.pdb
 D:\PROJECTS\C#\Proton\Proton\obj\x86\Debug\Proton.exe
 D:\PROJECTS\C#\Proton\Proton\obj\x86\Debug\Proton.pdb
-D:\projects\cs\Proton\Proton\obj\x86\Debug\Proton.csprojResolveAssemblyReference.cache
-D:\projects\cs\Proton\Proton\obj\x86\Debug\Proton.exe
-D:\projects\cs\Proton\Proton\obj\x86\Debug\Proton.pdb
-D:\PROJECTS\C#\Proton\Proton\obj\x86\Debug\Proton.csprojResolveAssemblyReference.cache

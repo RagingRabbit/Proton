@@ -4,10 +4,11 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Proton\Src\ProtonEngine.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Proton\Src\Core\Graphics\GL\VertexArray.cs">
     <Files>
-      <File FileName="Proton\Program.cs" Line="8" Column="43" />
-      <File FileName="Proton\Src\ProtonEngine.cs" Line="2" Column="1" />
+      <File FileName="Proton\Program.cs" Line="28" Column="9" />
+      <File FileName="Proton\Src\ProtonEngine.cs" Line="35" Column="1" />
+      <File FileName="Proton\Src\Core\Graphics\GL\VertexArray.cs" Line="74" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />

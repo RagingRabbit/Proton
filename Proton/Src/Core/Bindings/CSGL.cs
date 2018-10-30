@@ -572,6 +572,7 @@ namespace Proton
         #endregion
         */
 
+		/*
         #region csglClone
         public static byte[] csglClone(byte[] from)
         {
@@ -690,6 +691,7 @@ namespace Proton
             Buffer.BlockCopy(from, 0, to, 0, to.Length * sizeof(double));
         }
         #endregion
+        */
         #endregion
         #endregion
 
