@@ -20,14 +20,6 @@ namespace Proton
 			this.target = target;
 		}
 
-		~Buffer()
-		{
-			if (handle != 0)
-			{
-				Dispose();
-			}
-		}
-
 		internal void Dispose()
 		{
 			glDeleteBuffers(1, ref handle);
@@ -48,7 +40,7 @@ namespace Proton
 		{
 			IntPtr dataPtr = Marshal.AllocHGlobal(data.Length * sizeof(short));
 			Marshal.Copy(data, 0, dataPtr, data.Length);
-			glBufferData((uint)target, data.Length, dataPtr, (uint)usage);
+			glBufferData((uint)target, data.Length * sizeof(short), dataPtr, (uint)usage);
 			Marshal.FreeHGlobal(dataPtr);
 
 			length = data.Length;
@@ -59,7 +51,7 @@ namespace Proton
 		{
 			IntPtr dataPtr = Marshal.AllocHGlobal(data.Length * sizeof(int));
 			Marshal.Copy(data, 0, dataPtr, data.Length);
-			glBufferData((uint)target, data.Length, dataPtr, (uint)usage);
+			glBufferData((uint)target, data.Length * sizeof(int), dataPtr, (uint)usage);
 			Marshal.FreeHGlobal(dataPtr);
 
 			length = data.Length;
@@ -70,7 +62,7 @@ namespace Proton
 		{
 			IntPtr dataPtr = Marshal.AllocHGlobal(data.Length * sizeof(float));
 			Marshal.Copy(data, 0, dataPtr, data.Length);
-			glBufferData((uint)target, data.Length, dataPtr, (uint)usage);
+			glBufferData((uint)target, data.Length * sizeof(float), dataPtr, (uint)usage);
 			Marshal.FreeHGlobal(dataPtr);
 
 			length = data.Length;

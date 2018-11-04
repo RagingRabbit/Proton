@@ -28,7 +28,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
-    <Compile Include="Src\ProtonEngine.cs" />
     <Compile Include="Src\Core\Bindings\Dll.cs" />
     <Compile Include="Src\Core\Bindings\Glfw.cs" />
     <Compile Include="Src\Core\Bindings\OpenGL\GL11.cs" />
@@ -53,10 +52,23 @@
     <Compile Include="Src\Core\Graphics\Color.cs" />
     <Compile Include="Src\Core\Graphics\GL\VertexArray.cs" />
     <Compile Include="Src\Core\Graphics\GL\Buffer.cs" />
+    <Compile Include="Src\Core\Graphics\Shader.cs" />
+    <Compile Include="Src\Core\ProtonEngine.cs" />
+    <Compile Include="Src\Core\Renderer\Renderer3D.cs" />
+    <Compile Include="Src\Core\Graphics\Model.cs" />
+    <Compile Include="Src\Core\Renderer\Shaders\DefaultShader.cs" />
+    <Compile Include="Src\Core\Math\Vector3.cs" />
+    <Compile Include="Src\Core\Math\Vector2.cs" />
+    <Compile Include="Src\Core\Math\Matrix4.cs" />
+    <Compile Include="Src\Core\Graphics\Camera.cs" />
+    <Compile Include="Src\Core\Graphics\Display.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Src\Core\Graphics\" />
     <Folder Include="Src\Core\Graphics\GL\" />
+    <Folder Include="Src\Core\Renderer\" />
+    <Folder Include="Src\Core\Renderer\Shaders\" />
+    <Folder Include="Src\Core\Math\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -20,14 +20,6 @@ namespace Proton
 			elementBuffer = null;
 		}
 
-		~VertexArray()
-		{
-			if (handle != 0)
-			{
-				Dispose();
-			}
-		}
-
 		internal void Dispose()
 		{
 			while (arrayBuffers.Count > 0)

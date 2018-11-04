@@ -5,3 +5,15 @@ D:\PROJECTS\C#\Proton\Proton\bin\Debug\Proton.exe
 D:\PROJECTS\C#\Proton\Proton\bin\Debug\Proton.pdb
 D:\PROJECTS\C#\Proton\Proton\obj\x86\Debug\Proton.exe
 D:\PROJECTS\C#\Proton\Proton\obj\x86\Debug\Proton.pdb
+D:\Projects\Proton\Proton\bin\Debug\Proton.exe
+D:\Projects\Proton\Proton\bin\Debug\Proton.pdb
+D:\Projects\Proton\Proton\bin\Debug\mscorlib.dll
+D:\Projects\Proton\Proton\bin\Debug\de\mscorlib.resources.dll
+D:\Projects\Proton\Proton\bin\Debug\normidna.nlp
+D:\Projects\Proton\Proton\bin\Debug\normnfc.nlp
+D:\Projects\Proton\Proton\bin\Debug\normnfd.nlp
+D:\Projects\Proton\Proton\bin\Debug\normnfkc.nlp
+D:\Projects\Proton\Proton\bin\Debug\normnfkd.nlp
+D:\Projects\Proton\Proton\obj\x86\Debug\Proton.csprojResolveAssemblyReference.cache
+D:\Projects\Proton\Proton\obj\x86\Debug\Proton.exe
+D:\Projects\Proton\Proton\obj\x86\Debug\Proton.pdb
