@@ -17,7 +17,7 @@ namespace Proton
 		public Camera(float fov, float range)
 		{
 			projection = Matrix4.perspective(fov, Display.width / (float)Display.height, 0.1f, range);
-			view = Matrix4.identity;
+			//view = Matrix4.identity;
 			view *= Matrix4.translate(0.0f, 0.0f, -4.0f);
 			//view *= Matrix4.rotate(0.0f, 1.0f, 0.0f, 0.0f);
 		}

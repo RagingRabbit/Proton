@@ -17,3 +17,12 @@ D:\Projects\Proton\Proton\bin\Debug\normnfkd.nlp
 D:\Projects\Proton\Proton\obj\x86\Debug\Proton.csprojResolveAssemblyReference.cache
 D:\Projects\Proton\Proton\obj\x86\Debug\Proton.exe
 D:\Projects\Proton\Proton\obj\x86\Debug\Proton.pdb
+D:\projects\cs\Proton\Proton\bin\Debug\Proton.exe
+D:\projects\cs\Proton\Proton\bin\Debug\Proton.pdb
+D:\projects\cs\Proton\Proton\bin\Debug\mscorlib.dll
+D:\projects\cs\Proton\Proton\bin\Debug\de\mscorlib.resources.dll
+D:\projects\cs\Proton\Proton\bin\Debug\normidna.nlp
+D:\projects\cs\Proton\Proton\bin\Debug\normnfc.nlp
+D:\projects\cs\Proton\Proton\bin\Debug\normnfd.nlp
+D:\projects\cs\Proton\Proton\bin\Debug\normnfkc.nlp
+D:\projects\cs\Proton\Proton\bin\Debug\normnfkd.nlp
