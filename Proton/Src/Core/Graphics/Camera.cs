@@ -11,15 +11,29 @@ namespace Proton
 			mainCamera = new Camera(70.0f, 1000.0f);
 		}
 
-		public Matrix4 projection { get; private set; }
-		public Matrix4 view { get; private set; }
+		public Transform transform;
+		public float fovy, near, far;
 
-		public Camera(float fov, float range)
+		public Camera(float fov, float farPlane)
 		{
-			projection = Matrix4.perspective(fov, Display.width / (float)Display.height, 0.1f, range);
-			//view = Matrix4.identity;
-			view *= Matrix4.translate(0.0f, 0.0f, -4.0f);
-			//view *= Matrix4.rotate(0.0f, 1.0f, 0.0f, 0.0f);
+			transform = new Transform();
+			fovy = fov;
+			near = 0.1f;
+			far = farPlane;
+		}
+
+		public Matrix4 projection
+		{
+			get { return Matrix4.Perspective(fovy, Display.width / (float)Display.height, near, far); }
+		}
+
+		public Matrix4 view
+		{
+			get
+			{
+				Matrix4 mat = Matrix4.Rotate(transform.rotation.inverted) * Matrix4.Translate(transform.position.inverted);
+				return mat;
+			}
 		}
 	}
 }

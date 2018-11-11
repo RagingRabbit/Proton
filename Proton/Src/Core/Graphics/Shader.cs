@@ -5,6 +5,7 @@ using System.Text;
 namespace Proton
 {
 	using static GL11;
+	using static GL13;
 	using static GL20;
 	using static GL30;
 
@@ -50,6 +51,17 @@ namespace Proton
 		public void SetVariable(string name, Matrix4 mat)
 		{
 			glUniformMatrix4fv(GetUniformLocation(name), 1, GL_TRUE, ref mat.m00);
+		}
+
+		public void SetVariable(string name, bool b)
+		{
+			glUniform1i(GetUniformLocation(name), b ? 1 : 0);
+		}
+
+		public void BindTexture(string name, Texture texture, uint unit)
+		{
+			texture.Bind(unit);
+			glUniform1ui(GetUniformLocation(name), unit);
 		}
 
 		int GetUniformLocation(string name)

@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 
 namespace Proton
 {
-	//[StructLayout(LayoutKind.Sequential)]
 	public struct Matrix4
 	{
 		public static Matrix4 identity
@@ -128,7 +126,7 @@ namespace Proton
 			}
 		}
 
-		public static Matrix4 perspective(float fov, float aspect, float near, float far)
+		public static Matrix4 Perspective(float fov, float aspect, float near, float far)
 		{
 			double rad = fov / 180.0 * Math.PI;
 			double y = 1.0 / Math.Tan(0.5 * rad) * aspect;
@@ -146,7 +144,12 @@ namespace Proton
 			return mat;
 		}
 
-		public static Matrix4 translate(float x, float y, float z)
+		public static Matrix4 Translate(Vector3 v)
+		{
+			return Translate(v.x, v.y, v.z);
+		}
+
+		public static Matrix4 Translate(float x, float y, float z)
 		{
 			Matrix4 mat = identity;
 			mat.m30 = x;
@@ -156,7 +159,18 @@ namespace Proton
 			return mat;
 		}
 
-		public static Matrix4 rotate(float x, float y, float z, float deg)
+		public static Matrix4 Rotate(Quaternion q)
+		{
+			Vector4 axisAngle = q.axisAngle;
+			return Rotate(axisAngle.xyz, axisAngle.w);
+		}
+
+		public static Matrix4 Rotate(Vector3 axis, float deg)
+		{
+			return Rotate(axis.x, axis.y, axis.z, deg);
+		}
+
+		public static Matrix4 Rotate(float x, float y, float z, float deg)
 		{
 			double rad = deg / 180.0 * Math.PI;
 			double c = Math.Cos(rad);
@@ -188,18 +202,41 @@ namespace Proton
 		public static Matrix4 operator *(Matrix4 left, Matrix4 right)
 		{
 			Matrix4 mat = identity;
-			for (int i = 0; i < 4; i++)
-			{
-				for (int j = 0; j < 4; j++)
-				{
-					float sum = 0.0f;
-					for (int k = 0; k < 4; k++)
-					{
-						sum += left[k, j] * right[i, k];
-					}
-					mat[i, j] = sum;
-				}
-			}
+
+			float m00 = left.m00 * right.m00 + left.m10 * right.m01 + left.m20 * right.m02 + left.m30 * right.m03;
+			float m01 = left.m01 * right.m00 + left.m11 * right.m01 + left.m21 * right.m02 + left.m31 * right.m03;
+			float m02 = left.m02 * right.m00 + left.m12 * right.m01 + left.m22 * right.m02 + left.m32 * right.m03;
+			float m03 = left.m03 * right.m00 + left.m13 * right.m01 + left.m23 * right.m02 + left.m33 * right.m03;
+			float m10 = left.m00 * right.m10 + left.m10 * right.m11 + left.m20 * right.m12 + left.m30 * right.m13;
+			float m11 = left.m01 * right.m10 + left.m11 * right.m11 + left.m21 * right.m12 + left.m31 * right.m13;
+			float m12 = left.m02 * right.m10 + left.m12 * right.m11 + left.m22 * right.m12 + left.m32 * right.m13;
+			float m13 = left.m03 * right.m10 + left.m13 * right.m11 + left.m23 * right.m12 + left.m33 * right.m13;
+			float m20 = left.m00 * right.m20 + left.m10 * right.m21 + left.m20 * right.m22 + left.m30 * right.m23;
+			float m21 = left.m01 * right.m20 + left.m11 * right.m21 + left.m21 * right.m22 + left.m31 * right.m23;
+			float m22 = left.m02 * right.m20 + left.m12 * right.m21 + left.m22 * right.m22 + left.m32 * right.m23;
+			float m23 = left.m03 * right.m20 + left.m13 * right.m21 + left.m23 * right.m22 + left.m33 * right.m23;
+			float m30 = left.m00 * right.m30 + left.m10 * right.m31 + left.m20 * right.m32 + left.m30 * right.m33;
+			float m31 = left.m01 * right.m30 + left.m11 * right.m31 + left.m21 * right.m32 + left.m31 * right.m33;
+			float m32 = left.m02 * right.m30 + left.m12 * right.m31 + left.m22 * right.m32 + left.m32 * right.m33;
+			float m33 = left.m03 * right.m30 + left.m13 * right.m31 + left.m23 * right.m32 + left.m33 * right.m33;
+
+			mat.m00 = m00;
+			mat.m01 = m01;
+			mat.m02 = m02;
+			mat.m03 = m03;
+			mat.m10 = m10;
+			mat.m11 = m11;
+			mat.m12 = m12;
+			mat.m13 = m13;
+			mat.m20 = m20;
+			mat.m21 = m21;
+			mat.m22 = m22;
+			mat.m23 = m23;
+			mat.m30 = m30;
+			mat.m31 = m31;
+			mat.m32 = m32;
+			mat.m33 = m33;
+
 			return mat;
 		}
 	}

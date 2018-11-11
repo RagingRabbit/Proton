@@ -16,13 +16,24 @@ namespace Proton
 			glfwInit();
 
 			window = glfwCreateWindow(lParams.width, lParams.height, lParams.title, IntPtr.Zero, IntPtr.Zero);
+
 			glfwMakeContextCurrent(window);
 			csglLoadGL();
 
+			Input.Initialize(window);
+
 			adapter.Start();
+
+			long last = Time.now;
+			long delta = 0;
 
 			while (glfwWindowShouldClose(window) == 0)
 			{
+				long now = Time.now;
+				delta = now - last;
+				last = now;
+				Time.delta = delta / 1000.0f;
+
 				glfwSwapBuffers(window);
 				glfwPollEvents();
 				glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -55,6 +66,16 @@ namespace Proton
 			this.width = width;
 			this.height = height;
 			this.title = title;
+		}
+	}
+
+	public static class Time
+	{
+		public static float delta { get; internal set; }
+
+		public static long now
+		{
+			get { return DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond; }
 		}
 	}
 }

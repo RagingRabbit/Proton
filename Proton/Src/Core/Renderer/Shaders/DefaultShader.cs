@@ -40,9 +40,20 @@ in data
 
 out vec4 out_Color;
 
+uniform bool un_HasTexture;
+uniform sampler2D un_Texture;
+
 void main()
 {
-	out_Color = vec4(pass.uv, 1.0, 1.0);
+	vec4 texColor = texture(un_Texture, pass.uv);
+	if (un_HasTexture)
+	{
+		out_Color = texColor;
+	}
+	else
+	{
+		out_Color = vec4(0.7, 0.7, 0.7, 1.0);
+	}
 }
 ";
 	}

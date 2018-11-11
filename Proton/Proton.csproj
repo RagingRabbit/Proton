@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{F0A94D0C-33DA-435C-8BA9-5C2DC053C889}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>Proton</RootNamespace>
     <AssemblyName>Proton</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -27,7 +27,6 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Src\Core\Bindings\Dll.cs" />
     <Compile Include="Src\Core\Bindings\Glfw.cs" />
     <Compile Include="Src\Core\Bindings\OpenGL\GL11.cs" />
@@ -62,6 +61,14 @@
     <Compile Include="Src\Core\Math\Matrix4.cs" />
     <Compile Include="Src\Core\Graphics\Camera.cs" />
     <Compile Include="Src\Core\Graphics\Display.cs" />
+    <Compile Include="Src\Core\Graphics\Transform.cs" />
+    <Compile Include="Src\Core\Math\Quaternion.cs" />
+    <Compile Include="Src\Core\Math\Vector4.cs" />
+    <Compile Include="Src\Core\Math\Mathf.cs" />
+    <Compile Include="Src\Core\Graphics\Material.cs" />
+    <Compile Include="Src\Core\Graphics\GL\Texture.cs" />
+    <Compile Include="Src\Core\Controls\Input.cs" />
+    <Compile Include="Src\Core\Math\Vector2i.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Src\Core\Graphics\" />
@@ -69,6 +76,7 @@
     <Folder Include="Src\Core\Renderer\" />
     <Folder Include="Src\Core\Renderer\Shaders\" />
     <Folder Include="Src\Core\Math\" />
+    <Folder Include="Src\Core\Controls\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -79,6 +87,7 @@
     <Reference Include="System.Numerics" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

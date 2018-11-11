@@ -26,11 +26,22 @@ namespace Proton
 			shader.SetVariable("un_View", Camera.mainCamera.view);
 			for (int i = 0; i < models.Count; i++)
 			{
+				if (models[i].material.texture != null)
+				{
+					shader.BindTexture("un_Texture", models[i].material.texture, 0);
+				}
+				shader.SetVariable("un_HasTexture", models[i].material.texture != null);
+
 				models[i].vao.Bind();
 				models[i].vao.EnableAttributes();
 				models[i].vao.Draw();
 				models[i].vao.DisableAttributes();
 				models[i].vao.Unbind();
+
+				if (models[i].material.texture != null)
+				{
+					models[i].material.texture.Unbind();
+				}
 			}
 			shader.Disable();
 

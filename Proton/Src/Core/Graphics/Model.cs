@@ -7,9 +7,12 @@ namespace Proton
 	{
 		internal VertexArray vao;
 
+		public Material material;
+
 		public Model()
 		{
 			vao = new VertexArray();
+			material = new Material();
 		}
 
 		public ModelData data
@@ -62,6 +65,28 @@ namespace Proton
 			vertices = new List<Vertex>();
 			triangles = new List<Triangle>();
 		}
+
+		public ModelData PushVertex(Vertex vertex)
+		{
+			vertices.Add(vertex);
+			return this;
+		}
+
+		public ModelData PushTriangle(Triangle triangle)
+		{
+			triangles.Add(triangle);
+			return this;
+		}
+
+		public int vertexCount
+		{
+			get { return vertices.Count; }
+		}
+
+		public int triCount
+		{
+			get { return triangles.Count; }
+		}
 	}
 
 	public struct Vertex
@@ -85,3 +110,4 @@ namespace Proton
 		}
 	}
 }
+
