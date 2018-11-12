@@ -15,7 +15,7 @@ namespace Proton
 
         public override string ToString()
         {
-            return x + "," + y + "," + z;
+            return x + " , " + y + " , " + z;
         }
 
         public float length
@@ -42,9 +42,35 @@ namespace Proton
             return new Vector3(left.x + right.x, left.y + right.y, left.z + right.z);
         }
 
+        public static Vector3 operator *(Vector3 left, Vector3 right)
+        {
+            return new Vector3(left.x * right.x, left.y * right.y, left.z * right.z);
+        }
+
+        public static Vector3 operator *(Vector3 left, float right)
+        {
+            return new Vector3(left.x * right, left.y * right, left.z * right);
+        }
+
         public static Vector3 operator /(Vector3 left, float right)
         {
             return new Vector3(left.x / right, left.y / right, left.z / right);
         }
+
+        public static Vector3 zero { get { return new Vector3(0.0f, 0.0f, 0.0f); } }
+
+        public static Vector3 one { get { return new Vector3(1.0f, 1.0f, 1.0f); } }
+
+        public static Vector3 right { get { return new Vector3(1.0f, 0.0f, 0.0f); } }
+
+        public static Vector3 left { get { return new Vector3(-1.0f, 0.0f, 0.0f); } }
+
+        public static Vector3 up { get { return new Vector3(0.0f, 1.0f, 0.0f); } }
+
+        public static Vector3 down { get { return new Vector3(0.0f, -1.0f, 0.0f); } }
+
+        public static Vector3 back { get { return new Vector3(0.0f, 0.0f, 1.0f); } }
+
+        public static Vector3 forward { get { return new Vector3(0.0f, 0.0f, -1.0f); } }
     }
 }

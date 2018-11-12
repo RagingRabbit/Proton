@@ -22,22 +22,28 @@ namespace Proton
         static double curX, curY;
 
         static GLFWkeyfun keyCallback;
+        static GLFWmousebuttonfun mouseButtonCallback;
+        static GLFWscrollfun scrollCallback;
+        static GLFWcursorposfun cursorPosCallback;
 
         static List<KeyListener> keyListeners;
         static List<CursorPosListener> cursorPosListeners;
 
-        internal static void Initialize(IntPtr window)
+        internal static void Initialize()
         {
-            win = window;
+            win = ProtonEngine.window;
 
             keyCallback = HandleGLFWkeyfun;
+            mouseButtonCallback = HandleGLFWmousebuttonfun;
+            scrollCallback = HandleGLFWscrollfun;
+            cursorPosCallback = HandleGLFWcursorposfun;
 
-            glfwGetCursorPos(window, ref curX, ref curY);
+            glfwGetCursorPos(win, ref curX, ref curY);
 
-            glfwSetKeyCallback(window, keyCallback);
-            glfwSetMouseButtonCallback(window, HandleGLFWmousebuttonfun);
-            glfwSetScrollCallback(window, HandleGLFWscrollfun);
-            glfwSetCursorPosCallback(window, HandleGLFWcursorposfun);
+            glfwSetKeyCallback(win, keyCallback);
+            glfwSetMouseButtonCallback(win, mouseButtonCallback);
+            glfwSetScrollCallback(win, scrollCallback);
+            glfwSetCursorPosCallback(win, cursorPosCallback);
         }
 
         static void HandleGLFWkeyfun(IntPtr window, int key, int scancode, int action, int mods)

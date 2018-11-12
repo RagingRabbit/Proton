@@ -18,6 +18,16 @@ namespace Proton
             this.w = w;
         }
 
+        public Quaternion(Vector3 xyz, float w)
+            : this(xyz.x, xyz.y, xyz.z, w)
+        {
+        }
+
+        public override string ToString()
+        {
+            return x + " , " + y + " , " + z + " , " + w;
+        }
+
         public float lengthSquared
         {
             get { return x * x + y * y + z * z + w * w; }
@@ -33,7 +43,7 @@ namespace Proton
             get { return this / length; }
         }
 
-        public Quaternion inverted
+        public Quaternion conjugated
         {
             get { return new Quaternion(-x, -y, -z, w); }
         }
@@ -55,6 +65,19 @@ namespace Proton
 
                 return v;
             }
+            set
+            {
+                x = value.x;
+                y = value.y;
+                z = value.z;
+                double rad = value.w / 180.0 * Math.PI;
+                double n = Math.Sqrt(x * x + y * y + z * z);
+                float s = (float)(Math.Sin(0.5 * rad) / n);
+                x *= s;
+                y *= s;
+                z *= s;
+                w = (float)Math.Cos(0.5 * rad);
+            }
         }
 
         public Vector3 eulerAngles
@@ -75,7 +98,7 @@ namespace Proton
                     v.z = 0.0f;
                     return v;
                 }
-                if (tmp < 0.499f * unit)
+                if (tmp < -0.499f * unit)
                 {
                     v.x = Mathf.ToDeg((float)-Math.PI / 2.0f);
                     v.y = Mathf.ToDeg((float)(-2.0 * Math.Atan2(x, w)));
@@ -107,12 +130,17 @@ namespace Proton
         public static Quaternion operator *(Quaternion left, Quaternion right)
         {
             Quaternion q;
-            q.x = left.x * right.w + left.w * right.x + left.y * right.z - left.z * right.y;
-            q.y = left.y * right.w + left.w * right.y + left.z * right.x - left.x * right.z;
-            q.z = left.z * right.w + left.w * right.z + left.x * right.y - left.y * right.x;
-            q.w = left.w * right.w - left.x * right.x - left.y * right.y - left.z * right.z;
+            q.x = right.x * left.w + right.w * left.x + right.y * left.z - right.z * left.y;
+            q.y = right.y * left.w + right.w * left.y + right.z * left.x - right.x * left.z;
+            q.z = right.z * left.w + right.w * left.z + right.x * left.y - right.y * left.x;
+            q.w = right.w * left.w - right.x * left.x - right.y * left.y - right.z * left.z;
 
             return q;
+        }
+
+        public static Vector3 operator *(Quaternion left, Vector3 right)
+        {
+            return (left * new Quaternion(right, 0.0f) * left.conjugated).xyz;
         }
 
         public static Quaternion operator /(Quaternion left, float right)
@@ -122,23 +150,20 @@ namespace Proton
 
         public static Quaternion AxisAngle(Vector3 axis, float deg)
         {
-            return AxisAngle(axis.x, axis.y, axis.z, deg);
+            return AxisAngle(new Vector4(axis, deg));
         }
 
-        public static Quaternion AxisAngle(float x, float y, float z, float deg)
+        public static Quaternion AxisAngle(Vector4 axisAngle)
         {
-            Quaternion q;
-            q.x = x;
-            q.y = y;
-            q.z = z;
-            double rad = deg / 180.0 * Math.PI;
-            double n = Math.Sqrt(q.x * q.x + q.y * q.y + q.z * q.z);
-            float s = (float)(Math.Sin(0.5 * rad) / n);
-            q.x *= s;
-            q.y *= s;
-            q.z *= s;
-            q.w = (float)Math.Cos(0.5 * rad);
+            Quaternion q = new Quaternion();
+            q.axisAngle = axisAngle;
+            return q;
+        }
 
+        public static Quaternion EulerAngles(Vector3 eulers)
+        {
+            Quaternion q = new Quaternion();
+            q.eulerAngles = eulers;
             return q;
         }
     }
