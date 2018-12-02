@@ -417,6 +417,7 @@ namespace Proton
             csglDllLinkAllDelegates(typeof(Glfw), _glfwHnd);
         }
 
+#pragma warning disable 0649
         public static PFNGLFWINITPROC glfwInit;
         public static PFNGLFWTERMINATEPROC glfwTerminate;
         public static PFNGLFWGETVERSIONPROC glfwGetVersion;
@@ -509,6 +510,7 @@ namespace Proton
         public static PFNGLFWGETPROCADDRESSPROC glfwGetProcAddress;
         public static PFNGLFWVULKANSUPPORTEDPROC glfwVulkanSupported;
         public static PFNGLFWGETREQUIREDINSTANCEEXTENSIONSPROC glfwGetRequiredInstanceExtensions;
+#pragma warning restore 0649
         #endregion
     }
 }

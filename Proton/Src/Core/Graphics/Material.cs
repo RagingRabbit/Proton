@@ -2,8 +2,9 @@
 
 namespace Proton
 {
-	public class Material
-	{
-		public Texture texture;
-	}
+    public class Material
+    {
+        public Texture texture;
+        public Shader shader;
+    }
 }

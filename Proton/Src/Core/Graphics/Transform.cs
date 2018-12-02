@@ -2,15 +2,15 @@
 
 namespace Proton
 {
-    public class Transform
+    public struct Transform
     {
         public Vector3 position;
         public Quaternion rotation;
 
-        public Transform()
+        public Transform(Vector3 position, Quaternion rotation)
         {
-            position = new Vector3();
-            rotation = Quaternion.identity;
+            this.position = position;
+            this.rotation = rotation;
         }
 
         public Vector3 right { get { return (new Quaternion(1.0f, 0.0f, 0.0f, 0.0f) * rotation).xyz; } }

@@ -16,7 +16,7 @@ namespace Proton
 
         public Camera(float fov, float farPlane)
         {
-            transform = new Transform();
+            transform = new Transform(Vector3.zero, Quaternion.identity);
             fovy = fov;
             near = 0.1f;
             far = farPlane;

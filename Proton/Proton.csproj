@@ -53,6 +53,8 @@
     <Compile Include="Src\Core\Graphics\GL\VertexArray.cs" />
     <Compile Include="Src\Core\Graphics\GL\Buffer.cs" />
     <Compile Include="Src\Core\Graphics\Shader.cs" />
+    <Compile Include="Src\Core\Math\Simplex.cs" />
+    <Compile Include="Src\Core\Math\Vector3i.cs" />
     <Compile Include="Src\Core\ProtonEngine.cs" />
     <Compile Include="Src\Core\Renderer\Renderer3D.cs" />
     <Compile Include="Src\Core\Graphics\Model.cs" />

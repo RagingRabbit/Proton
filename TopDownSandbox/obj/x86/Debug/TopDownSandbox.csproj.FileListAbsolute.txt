@@ -7,3 +7,4 @@ D:\Projects\Proton\TopDownSandbox\bin\Debug\Proton.dll
 D:\Projects\Proton\TopDownSandbox\obj\x86\Debug\TopDownSandbox.csprojAssemblyReference.cache
 D:\Projects\Proton\TopDownSandbox\obj\x86\Debug\TopDownSandbox.csproj.CoreCompileInputs.cache
 D:\Projects\Proton\TopDownSandbox\obj\x86\Debug\TopDownSandbox.csproj.CopyComplete
+D:\Projects\Proton\TopDownSandbox\bin\Debug\TopDownSandbox.exe.config

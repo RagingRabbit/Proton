@@ -1,0 +1,10 @@
+D:\Projects\Proton\Sandbox3D\obj\Debug\Sandbox3D.csprojAssemblyReference.cache
+D:\Projects\Proton\Sandbox3D\obj\Debug\Sandbox3D.csproj.CoreCompileInputs.cache
+D:\Projects\Proton\Sandbox3D\bin\Debug\Sandbox3D.exe.config
+D:\Projects\Proton\Sandbox3D\bin\Debug\Sandbox3D.exe
+D:\Projects\Proton\Sandbox3D\bin\Debug\Sandbox3D.pdb
+D:\Projects\Proton\Sandbox3D\bin\Debug\Proton.dll
+D:\Projects\Proton\Sandbox3D\bin\Debug\Proton.pdb
+D:\Projects\Proton\Sandbox3D\obj\Debug\Sandbox3D.csproj.CopyComplete
+D:\Projects\Proton\Sandbox3D\obj\Debug\Sandbox3D.exe
+D:\Projects\Proton\Sandbox3D\obj\Debug\Sandbox3D.pdb
