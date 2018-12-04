@@ -19,6 +19,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <Optimize>true</Optimize>
@@ -26,6 +27,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Src\Core\Bindings\Dll.cs" />
@@ -48,6 +50,8 @@
     <Compile Include="Src\Core\Bindings\OpenGL\GL44.cs" />
     <Compile Include="Src\Core\Bindings\OpenGL\GL45.cs" />
     <Compile Include="Src\Core\Bindings\CSGL.cs" />
+    <Compile Include="Src\Core\Bindings\Sdl2.cs" />
+    <Compile Include="Src\Core\Bindings\Sdl_image.cs" />
     <Compile Include="Src\Core\Graphics\Graphics.cs" />
     <Compile Include="Src\Core\Graphics\Color.cs" />
     <Compile Include="Src\Core\Graphics\GL\VertexArray.cs" />

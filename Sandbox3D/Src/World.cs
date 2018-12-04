@@ -25,6 +25,7 @@ public class World
             }
         }
 
+        Camera.mainCamera.fovy = 70;
         Camera.mainCamera.transform.position.x = 2.5f;
         Camera.mainCamera.transform.position.y = 0.5f;
         Camera.mainCamera.transform.position.z = 2.5f;
@@ -44,6 +45,11 @@ public class World
         }
     }
 
+    public BlockData GetBlockAtWorldPos(Vector3i v)
+    {
+        return GetBlockAtWorldPos(v.x, v.y, v.z);
+    }
+
     public BlockData GetBlockAtWorldPos(int x, int y, int z)
     {
         Chunk chunk = GetChunkAtWorldPos(x, y, z);
@@ -54,7 +60,28 @@ public class World
             z -= chunk.pos.z;
             return chunk.blocks[x, y, z];
         }
-        return BlockData.EMPTY;
+        return BlockData.AIR;
+    }
+
+    public void SetBlockAtWorldPos(Vector3i v, BlockData block, bool rebuild)
+    {
+        SetBlockAtWorldPos(v.x, v.y, v.z, block, rebuild);
+    }
+
+    public void SetBlockAtWorldPos(int x, int y, int z, BlockData block, bool rebuild)
+    {
+        Chunk chunk = GetChunkAtWorldPos(x, y, z);
+        if (chunk != null)
+        {
+            x -= chunk.pos.x;
+            y -= chunk.pos.y;
+            z -= chunk.pos.z;
+            chunk.blocks[x, y, z] = block;
+            if (rebuild)
+            {
+                chunk.Rebuild();
+            }
+        }
     }
 
     private Chunk GetChunkAtWorldPos(int x, int y, int z)

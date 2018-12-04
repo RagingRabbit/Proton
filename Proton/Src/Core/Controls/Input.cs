@@ -13,6 +13,7 @@ namespace Proton
             buttons = new bool[GLFW_MOUSE_BUTTON_LAST];
 
             keyListeners = new List<KeyListener>();
+            mouseListeners = new List<MouseListener>();
             cursorPosListeners = new List<CursorPosListener>();
         }
 
@@ -27,6 +28,7 @@ namespace Proton
         static GLFWcursorposfun cursorPosCallback;
 
         static List<KeyListener> keyListeners;
+        static List<MouseListener> mouseListeners;
         static List<CursorPosListener> cursorPosListeners;
 
         internal static void Initialize()
@@ -58,6 +60,10 @@ namespace Proton
         static void HandleGLFWmousebuttonfun(IntPtr window, int button, int action, int mods)
         {
             buttons[button] = action != GLFW_RELEASE;
+            foreach (MouseListener listener in mouseListeners)
+            {
+                listener.OnMouseEvent(button, action != GLFW_RELEASE, (KeyMod)mods);
+            }
         }
 
         static void HandleGLFWscrollfun(IntPtr window, double xoffset, double yoffset)
@@ -80,6 +86,11 @@ namespace Proton
         public static void AddKeyListener(KeyListener listener)
         {
             keyListeners.Add(listener);
+        }
+
+        public static void AddMouseListener(MouseListener listener)
+        {
+            mouseListeners.Add(listener);
         }
 
         public static void AddCursorPosListener(CursorPosListener listener)
@@ -112,6 +123,11 @@ namespace Proton
     public interface KeyListener
     {
         void OnKeyEvent(KeyCode key, bool down, KeyMod mods);
+    }
+
+    public interface MouseListener
+    {
+        void OnMouseEvent(int button, bool down, KeyMod mods);
     }
 
     public interface CursorPosListener

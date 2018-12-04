@@ -31,17 +31,27 @@ public class Chunk
                 {
                     if (y < height)
                     {
-                        blocks[x, y, z] = new BlockData { id = 1, transparent = false, solid = true };
+                        blocks[x, y, z] = BlockData.GRASS;
                     }
                     else
                     {
-                        blocks[x, y, z] = new BlockData { id = 0, transparent = false, solid = false };
+                        blocks[x, y, z] = BlockData.AIR;
                     }
                 }
             }
         }
         model.data = ConstructModelData();
         model.material.texture = new Texture("../.../Res/image.png");
+    }
+
+    public void Rebuild()
+    {
+        model.data = ConstructModelData();
+    }
+
+    public void Render()
+    {
+        Renderer3D.RenderModel(model);
     }
 
     ModelData ConstructModelData()
@@ -152,10 +162,5 @@ public class Chunk
 
         blocks.PushTriangle(t0);
         blocks.PushTriangle(t1);
-    }
-
-    public void Render()
-    {
-        Renderer3D.RenderModel(model);
     }
 }

@@ -13,16 +13,16 @@ namespace Proton
             this.rotation = rotation;
         }
 
-        public Vector3 right { get { return (new Quaternion(1.0f, 0.0f, 0.0f, 0.0f) * rotation).xyz; } }
+        public Vector3 right { get { return rotation * Vector3.right; } }
 
-        public Vector3 left { get { return (new Quaternion(-1.0f, 0.0f, 0.0f, 0.0f) * rotation).xyz; } }
+        public Vector3 left { get { return rotation * Vector3.left; } }
 
-        public Vector3 up { get { return (new Quaternion(0.0f, 1.0f, 0.0f, 0.0f) * rotation).xyz; } }
+        public Vector3 up { get { return rotation * Vector3.up; } }
 
-        public Vector3 down { get { return (new Quaternion(0.0f, -1.0f, 0.0f, 0.0f) * rotation).xyz; } }
+        public Vector3 down { get { return rotation * Vector3.down; } }
 
-        public Vector3 back { get { return (new Quaternion(0.0f, 0.0f, 1.0f, 0.0f) * rotation).xyz; } }
+        public Vector3 back { get { return rotation * Vector3.back; } }
 
-        public Vector3 forward { get { return (new Quaternion(0.0f, 0.0f, -1.0f, 0.0f) * rotation).xyz; } }
+        public Vector3 forward { get { return rotation * Vector3.forward; } }
     }
 }

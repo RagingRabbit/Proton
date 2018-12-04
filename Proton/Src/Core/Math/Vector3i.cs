@@ -12,5 +12,10 @@ namespace Proton
             this.y = y;
             this.z = z;
         }
+
+        public override string ToString()
+        {
+            return x + " , " + y + " , " + z;
+        }
     }
 }

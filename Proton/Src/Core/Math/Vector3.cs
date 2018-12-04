@@ -25,8 +25,7 @@ namespace Proton
 
         public Vector3 normalized
         {
-            get
-            {
+            get {
                 float l = length;
                 return l < 0.001f ? new Vector3() : new Vector3(x / l, y / l, z / l);
             }
@@ -40,6 +39,11 @@ namespace Proton
         public static Vector3 operator +(Vector3 left, Vector3 right)
         {
             return new Vector3(left.x + right.x, left.y + right.y, left.z + right.z);
+        }
+
+        public static Vector3 operator -(Vector3 left, Vector3 right)
+        {
+            return new Vector3(left.x - right.x, left.y - right.y, left.z - right.z);
         }
 
         public static Vector3 operator *(Vector3 left, Vector3 right)
